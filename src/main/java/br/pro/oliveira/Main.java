@@ -1,13 +1,10 @@
 package br.pro.oliveira;
 
-import br.pro.oliveira.CallBack.CallBackCarros;
+
 import br.pro.oliveira.models.Carro;
 import br.pro.oliveira.restclient.RestClient;
 import br.pro.oliveira.services.CarroService;
-import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -48,7 +45,7 @@ public class Main
                         InserirCarro(carroService);
                         break;
                     case 4:
-                        ModificarCarro(carroService);
+                        AtualizarCarro(carroService);
                         break;
 
                     case 5:
@@ -119,15 +116,6 @@ public class Main
 
     }
 
-    private static void ModificarCarro(CarroService carroService) throws IOException{
-
-        Carro novoCarro = new Carro();
-        novoCarro.setModelo("Teste-4");
-
-        Response <Carro> response = carroService.modificar(6,novoCarro).execute();
-        System.out.println(response.body());
-
-    }
 
     private static void ExcluirCarro(CarroService carroService) throws IOException{
         System.out.println("Qual item deseja excluir?:");

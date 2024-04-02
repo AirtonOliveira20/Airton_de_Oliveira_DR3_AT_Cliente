@@ -19,9 +19,6 @@ public interface CarroService {
     @GET("/carros/{id}")
     Call<Carro> ler(@Path("id") long id);
 
-    @PUT("/carros/{id}")
-    Call<Carro> modificar(@Path("id") long id, @Body Carro carro);
-
     @PATCH("/carros/{id}")
     Call<Carro> atualizar(@Path("id") long id, @Body Carro carro);
 
